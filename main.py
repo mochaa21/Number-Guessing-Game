@@ -9,22 +9,26 @@ print(f"\n\nWelcome to the Number Guessing Game!\nI'm thinking of a number betwe
 print("\n-----==========-----")
 
 
-while angka_rand:
-    x = int(input(f"Please select the difficulty level:\n1. Easy (10 chances)\n2. Medium (5 chances)\n3. Hard (3 chances)\nEnter your choice -> "))
-    if x == 1:
-        chance = 10
-        print(f'\nGreat! You have selected the Easy difficulty level. Your chance is {chance}')
-        break
-    elif x == 2:
-        chance = 5
-        print(f'\nGreat! You have selected the Medium difficulty level. Your chance is {chance}')
-        break
-    elif x == 3:
-        chance = 3
-        print(f'\nGreat! You have selected the Hard difficulty level. Your chance is {chance}')
-        break
-    else:
-        print("\n-----=== Your input is invalid! ===-----\n")
+while True:
+    try:
+        x = int(input(f"Please select the difficulty level:\n1. Easy (10 chances)\n2. Medium (5 chances)\n3. Hard (3 chances)\nEnter your choice -> "))
+        if x == 1:
+            chance = 10
+            print(f'\nGreat! You have selected the Easy difficulty level. Your chance is {chance}')
+            break
+        elif x == 2:
+            chance = 5
+            print(f'\nGreat! You have selected the Medium difficulty level. Your chance is {chance}')
+            break
+        elif x == 3:
+            chance = 3
+            print(f'\nGreat! You have selected the Hard difficulty level. Your chance is {chance}')
+            break
+        else:
+            print("\n-----=== Your input is invalid! ===-----\n")
+            continue
+    except ValueError:
+        print(f'\n-----=== Error! Input a number (1, 2, 3) ===-----')
         continue
 
 print('\n-----==========-----')
