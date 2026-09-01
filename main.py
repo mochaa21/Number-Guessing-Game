@@ -25,9 +25,9 @@ print('\n-----==========-----')
 
 while chance > 0:
     try:
-        print('Selecting a number to guess...')
+        print('retrieving data..')
         time.sleep(2.5)
-        user_inp = int(input('The numbers have been selected! Enter your guess -> '))
+        user_inp = int(input('Enter your guess -> '))
     except ValueError:
         print("Please enter a valid number!")
         continue
@@ -38,11 +38,18 @@ while chance > 0:
         time.sleep(2.5)
         print(f'Congratulations! You guessed the correct number in {attempts} attempts.')
         break
+    elif user_inp < angka_rand:
+        chance -= 1
+        print('process..')
+        time.sleep(2.5)
+        print('too small! Try a bigger number.')
     elif user_inp > angka_rand:
         chance -= 1
         print('process..')
         time.sleep(2.5)
-        print('too small..')
+        print('to big! Try a smaller number.')
+    else:
+        print('to much! guess number (1, 100)!')
 
 if chance == 0:
     print(f'Game over! the correct number is {angka_rand}')
