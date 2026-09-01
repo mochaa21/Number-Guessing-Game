@@ -22,6 +22,18 @@ else:
 print('\n-----==========-----')
 
 while chance > 0:
-    print('Sedang memilih angka untuk ditebak...')
+    print('Selecting a number to guess...')
     time.sleep(2.5)
-    user_inp = int(input('Angka sudah dipilih! silahkan tebak angka yang aku pilih!\n'))
+    user_inp = int(input('The numbers have been selected! Enter your guess -> '))
+    if user_inp:
+        attempts += 1
+    if user_inp == angka_rand:
+        print('process..')
+        time.sleep(2.5)
+        print(f'Congratulations! You guessed the correct number in {attempts} attempts.')
+        break
+    elif user_inp > angka_rand:
+        chance -= 1
+        print('process..')
+        time.sleep(2.5)
+        print('too small..')
